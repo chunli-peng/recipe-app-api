@@ -14,5 +14,4 @@ app/*/*/*/__pycache__/
 .venv/
 venv/
 
-# history
-.history
+# .history
