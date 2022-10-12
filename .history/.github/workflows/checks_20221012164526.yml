@@ -1,6 +1,0 @@
----
-name: Checks
-
-on: [push]
-
-job
