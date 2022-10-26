@@ -9,7 +9,7 @@ from django.test import Client
 
 
 class AdminSiteTests(TestCase):
-    """Tests for Django amdin."""
+    """Tests for Django admin."""
 
     def setUp(self):
         self.client = Client()

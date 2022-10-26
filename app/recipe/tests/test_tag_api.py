@@ -27,7 +27,7 @@ def create_user(email='user@example.com', password='testpass123'):
     return get_user_model().objects.create_user(email=email, password=password)
 
 
-class PublicTagesApiTests(TestCase):
+class PublicTagsApiTests(TestCase):
     """Test unauthenticated API requests."""
 
     def setUp(self):
@@ -73,7 +73,7 @@ class PrivateTagsApiTests(TestCase):
         self.assertEqual(res.data[0]['name'], tag.name)
         self.assertEqual(res.data[0]['id'], tag.id)
 
-    def test_updata_tag(self):
+    def test_update_tag(self):
         """Test updating a tag."""
         tag = Tag.objects.create(user=self.user, name='After Dinner')
 
