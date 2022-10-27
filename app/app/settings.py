@@ -130,8 +130,8 @@ USE_TZ = True
 STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 
-# MEDIA_ROOT = '/vol/web/media'  # success in server
-MEDIA_ROOT = 'vol/web/media'  # success in local
+MEDIA_ROOT = '/vol/web/media'  # success in server
+# MEDIA_ROOT = 'vol/web/media'  # success in local
 STATIC_ROOT = '/vol/web/static'
 
 # Default primary key field type
