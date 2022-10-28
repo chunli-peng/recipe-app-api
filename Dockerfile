@@ -7,6 +7,7 @@ COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 COPY ./scripts /scripts
+
 WORKDIR /app
 EXPOSE 8000
 
@@ -21,7 +22,7 @@ RUN python -m venv /py && \
         then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \
     rm -rf /tmp && \
-    apk del .tmp-build-deps &&\
+    apk del .tmp-build-deps && \
     adduser \
         --disabled-password \
         --no-create-home \
@@ -32,7 +33,6 @@ RUN python -m venv /py && \
     chmod -R 755 /vol && \
     chmod -R +x /scripts
 
-ENV PATH="/py/bin:$PATH"
 ENV PATH="/scripts:/py/bin:$PATH"
 
 USER django-user
