@@ -20,4 +20,18 @@ https://www.udemy.com/course/django-python-advanced/
 ## Deployment commands on linux:
 https://github.com/LondonAppDeveloper/build-a-backend-rest-api-with-python-django-advanced-resources/blob/main/deployment.md#install-and-configure-depdencies
 
+ssh-agent bash
 
+ssh-add .\aws_id_rsa
+
+ssh ec2-user@54.242.131.234   # Public IP will change when restart
+
+cd recipe-app-api/
+
+ls -al
+
+vim .env  # change IP
+
+docker-compose -f docker-compose-deploy.yml up
+
+docker-compose -f docker-compose-deploy.yml run --rm app sh -c "python manage.py createsuperuser"     # create super user
